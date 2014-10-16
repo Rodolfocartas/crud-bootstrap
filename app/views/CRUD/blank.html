@@ -1,7 +1,7 @@
 #{extends 'CRUD/layout.html' /}
 #{set title:messages.get('crud.blank.title', type.modelName) /}
 
-<h3>&{'crud.blank.title', type.modelName}</h3>
+<h2>&{'crud.blank.title', type.modelName}</h2>
 <hr>
 
 #{form action:@create(), enctype:'multipart/form-data', class:'form-horizontal'}
