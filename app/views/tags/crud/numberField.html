@@ -8,7 +8,7 @@
 #{/else}
 	<label class="control-label" for="${field.id}">&{_name}</label>
 	<div class="controls">
-    <input id="${field.id}" type="text" name="${field.name}" value="${params[field.name]?.escape()?.raw() ?: field.error?.message == 'validation.required' ? '' : _value?.escape()?.raw()}" size="5" />
+    <input id="${field.id}" type="text" name="${field.name}" value="${params[field.name]?.escape()?.raw() ?: field.error?.message == 'validation.required' ? '' : _value?.escape()?.raw()}" size="5" />#{crud.help type:_type, name:_name /}
 </div>
 </div>
 #{/field}

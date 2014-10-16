@@ -43,48 +43,48 @@
 	    #{/ifnot}
 		
         #{if field.type == 'text'}
-            #{crud.textField name:field.name, value:(currentObject ? currentObject[field.name] : null) /}
+            #{crud.textField type:currentType, name:field.name, value:(currentObject ? currentObject[field.name] : null) /}
         #{/if}
 
         #{if field.type == 'password'}
-            #{crud.passwordField name:field.name, value:(currentObject ? currentObject[field.name] : null) /}
+            #{crud.passwordField type:currentType, name:field.name, value:(currentObject ? currentObject[field.name] : null) /}
         #{/if}
 
         #{if field.type == 'binary'}
-            #{crud.fileField name:field.name, value:(currentObject ? currentObject[field.name] : null), id:currentObject?.id /}
+            #{crud.fileField type:currentType, name:field.name, value:(currentObject ? currentObject[field.name] : null), id:currentObject?.id /}
         #{/if}
 
         #{if field.type == 'longtext'}
-            #{crud.longtextField name:field.name, value:(currentObject ? currentObject[field.name] : null) /}
+            #{crud.longtextField type:currentType, name:field.name, value:(currentObject ? currentObject[field.name] : null) /}
         #{/if}
 
         #{if field.type == 'number'}
-            #{crud.numberField name:field.name, value:(currentObject ? currentObject[field.name] : null) /}
+            #{crud.numberField type:currentType, name:field.name, value:(currentObject ? currentObject[field.name] : null) /}
             %{ am = 'crud.help.numeric' }%
         #{/if}
 
         #{if field.type == 'date'}
-            #{crud.dateField name:field.name, value:(currentObject ? currentObject[field.name] : null) /}
+            #{crud.dateField type:currentType, name:field.name, value:(currentObject ? currentObject[field.name] : null) /}
             %{ am = messages.get('crud.help.dateformat',play.libs.I18N.getDateFormat()) }%
         #{/if}
 
         #{if field.type == 'relation'}
-            #{crud.relationField name:field.name, value:(currentObject ? currentObject[field.name] : null), field:field /}
+            #{crud.relationField type:currentType, name:field.name, value:(currentObject ? currentObject[field.name] : null), field:field /}
         #{/if}
 
         #{if field.type == 'boolean'}
-            #{crud.checkField name:field.name, value:(currentObject ? currentObject[field.name] : null) /}
+            #{crud.checkField  type:currentType, name:field.name, value:(currentObject ? currentObject[field.name] : null) /}
         #{/if}
 
         #{if field.type == 'enum'}
-            #{crud.enumField name:field.name, value:(currentObject ? currentObject[field.name] : null), property:field /}
+            #{crud.enumField type:currentType, name:field.name, value:(currentObject ? currentObject[field.name] : null), property:field /}
         #{/if}
 
         #{if field.type == 'hidden'}
-            #{crud.hiddenField name:field.name, value:(currentObject ? currentObject[field.name] : null) /}
+            #{crud.hiddenField type:currentType, name:field.name, value:(currentObject ? currentObject[field.name] : null) /}
         #{/if}
 
-		#{crud.help type:currentType, name:field.name /}
+
 
     %{ } }%
 
